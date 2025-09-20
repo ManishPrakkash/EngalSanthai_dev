@@ -7,9 +7,10 @@ import MobileMenu from './MobileMenu.tsx';
 interface UserHeaderProps {
   user: User;
   onLogout: () => void;
+  onOpenSettings?: () => void;
 }
 
-const UserHeader: React.FC<UserHeaderProps> = ({ user, onLogout }) => {
+const UserHeader: React.FC<UserHeaderProps> = ({ user, onLogout, onOpenSettings }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -40,6 +41,7 @@ const UserHeader: React.FC<UserHeaderProps> = ({ user, onLogout }) => {
         onClose={() => setIsMenuOpen(false)}
         user={user}
         onLogout={onLogout}
+        onOpenSettings={onOpenSettings}
       />
     </>
   );

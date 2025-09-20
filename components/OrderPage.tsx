@@ -7,6 +7,7 @@ import { PlusIcon, MinusIcon, MagnifyingGlassIcon } from './ui/Icon.tsx';
 import PaymentPage from './PaymentPage.tsx';
 import CartView from './CartView.tsx';
 import BillPreviewPage from './BillPreviewPage.tsx';
+import Settings from './Settings.tsx';
 
 interface OrderPageProps {
   user: User;
@@ -15,7 +16,7 @@ interface OrderPageProps {
   onLogout: () => void;
 }
 
-type OrderStage = 'ordering' | 'payment' | 'success';
+type OrderStage = 'ordering' | 'payment' | 'success' | 'settings';
 
 // Utility to convert file to base64
 const fileToBase64 = (file: File): Promise<string> => {
@@ -110,6 +111,22 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, vegetables, addBill, onLogo
       setStage('payment');
   };
 
+  const handleOpenSettings = () => {
+    setStage('settings');
+  };
+
+  const handleUpdateProfile = (profile: { name: string; email: string }) => {
+    // Handle profile update logic here
+    console.log('Profile updated:', profile);
+    // You can add API calls or state updates here
+  };
+
+  const handleChangePassword = (passwords: { currentPassword: string; newPassword: string; confirmPassword: string }) => {
+    // Handle password change logic here
+    console.log('Password change requested');
+    // You can add API calls or validation here
+  };
+
   if (stage === 'payment') {
     return <PaymentPage total={total} onConfirmOrder={handleConfirmOrder} onBack={() => setStage('ordering')} />;
   }
@@ -124,9 +141,30 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, vegetables, addBill, onLogo
     );
   }
 
+  if (stage === 'settings') {
+    return (
+      <div className="min-h-screen bg-slate-100">
+        <UserHeader user={user} onLogout={onLogout} />
+        <div className="p-4">
+          <button 
+            onClick={() => setStage('ordering')}
+            className="mb-4 text-primary-600 hover:text-primary-700 font-medium"
+          >
+            ← Back to Shopping
+          </button>
+          <Settings 
+            user={user}
+            onUpdateProfile={handleUpdateProfile}
+            onChangePassword={handleChangePassword}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col h-screen bg-slate-50 font-sans">
-      <UserHeader user={user} onLogout={onLogout} />
+      <UserHeader user={user} onLogout={onLogout} onOpenSettings={handleOpenSettings} />
       <div className="flex-1 flex lg:flex-row overflow-hidden">
         {/* Product List */}
         <main className="flex-1 overflow-y-auto p-4 sm:p-6 pb-24">

@@ -26,4 +26,5 @@ export interface User {
   id: string;
   name: string;
   role: 'admin' | 'user';
+  email?: string; // Optional email field for settings
 }

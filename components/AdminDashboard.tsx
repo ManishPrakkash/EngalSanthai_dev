@@ -5,6 +5,7 @@ import AdminHeader from './AdminHeader.tsx';
 import Dashboard from './Dashboard.tsx';
 import Inventory from './Inventory.tsx';
 import Orders from './Orders.tsx';
+import Settings from './Settings.tsx';
 
 interface AdminDashboardProps {
   user: User;
@@ -16,7 +17,7 @@ interface AdminDashboardProps {
   bills: Bill[];
 }
 
-type AdminPage = 'dashboard' | 'inventory' | 'orders';
+type AdminPage = 'dashboard' | 'inventory' | 'orders' | 'settings';
 
 const AdminDashboard: React.FC<AdminDashboardProps> = (props) => {
   const [currentPage, setCurrentPage] = useState<AdminPage>('dashboard');
@@ -26,6 +27,18 @@ const AdminDashboard: React.FC<AdminDashboardProps> = (props) => {
   const handleViewOrder = (billId: string) => {
     setInitialBillId(billId);
     setCurrentPage('orders');
+  };
+
+  const handleUpdateProfile = (profile: { name: string; email: string }) => {
+    // Handle profile update logic here
+    console.log('Profile updated:', profile);
+    // You can add API calls or state updates here
+  };
+
+  const handleChangePassword = (passwords: { currentPassword: string; newPassword: string; confirmPassword: string }) => {
+    // Handle password change logic here
+    console.log('Password change requested');
+    // You can add API calls or validation here
   };
 
   const renderContent = () => {
@@ -46,6 +59,12 @@ const AdminDashboard: React.FC<AdminDashboardProps> = (props) => {
                   initialBillId={initialBillId} 
                   onClearInitialBill={() => setInitialBillId(null)}
                />;
+      case 'settings':
+        return <Settings 
+                  user={props.user}
+                  onUpdateProfile={handleUpdateProfile}
+                  onChangePassword={handleChangePassword}
+               />;
       default:
         return <Dashboard bills={props.bills} vegetables={props.vegetables} onViewOrder={handleViewOrder} />;
     }
@@ -55,6 +74,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = (props) => {
       dashboard: 'Dashboard',
       inventory: 'Inventory',
       orders: 'Order History',
+      settings: 'Settings',
   };
 
   return (

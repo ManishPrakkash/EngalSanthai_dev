@@ -1,16 +1,23 @@
 
 import React from 'react';
 import type { User } from '../types.ts';
-import { LogoutIcon, XMarkIcon } from './ui/Icon.tsx';
+import { LogoutIcon, XMarkIcon, CogIcon } from './ui/Icon.tsx';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   user: User;
   onLogout: () => void;
+  onOpenSettings?: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, user, onLogout }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, user, onLogout, onOpenSettings }) => {
+  const handleSettingsClick = () => {
+    if (onOpenSettings) {
+      onOpenSettings();
+      onClose();
+    }
+  };
   return (
     <div 
         role="dialog"
@@ -47,13 +54,25 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, user, onLogout
                     <p className="text-sm text-slate-500 capitalize">{user.role}</p>
                 </div>
 
-                <button
-                    onClick={onLogout}
-                    className="flex items-center w-full p-3 rounded-lg text-base font-medium text-red-600 hover:bg-red-100 transition-colors duration-200"
-                >
-                    <LogoutIcon className="h-5 w-5 mr-3" />
-                    <span>Logout</span>
-                </button>
+                <div className="space-y-2">
+                    {onOpenSettings && (
+                        <button
+                            onClick={handleSettingsClick}
+                            className="flex items-center w-full p-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-200 transition-colors duration-200"
+                        >
+                            <CogIcon className="h-5 w-5 mr-3" />
+                            <span>Settings</span>
+                        </button>
+                    )}
+
+                    <button
+                        onClick={onLogout}
+                        className="flex items-center w-full p-3 rounded-lg text-base font-medium text-red-600 hover:bg-red-100 transition-colors duration-200"
+                    >
+                        <LogoutIcon className="h-5 w-5 mr-3" />
+                        <span>Logout</span>
+                    </button>
+                </div>
             </div>
 
             <div className="p-4 text-center text-xs text-slate-400 border-t border-slate-200">

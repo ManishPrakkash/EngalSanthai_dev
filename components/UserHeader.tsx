@@ -20,7 +20,7 @@ const UserHeader: React.FC<UserHeaderProps> = ({ user, onLogout }) => {
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
               🥬 Engal Santhai
             </h1>
-            <div className="flex items-center">
+            <div className="flex items-center space-x-3">
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className="p-2 rounded-full text-primary-200 hover:text-white hover:bg-primary-800 transition-colors"
@@ -28,6 +28,9 @@ const UserHeader: React.FC<UserHeaderProps> = ({ user, onLogout }) => {
               >
                 <UserCircleIcon className="h-7 w-7" />
               </button>
+              <span className="text-primary-100 font-medium hidden sm:block">
+                {user.name}
+              </span>
             </div>
           </div>
         </div>

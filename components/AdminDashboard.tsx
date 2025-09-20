@@ -71,7 +71,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = (props) => {
         setIsOpen={setSidebarOpen}
       />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <AdminHeader onMenuClick={() => setSidebarOpen(true)} title={pageTitles[currentPage]} />
+        <AdminHeader onMenuClick={() => setSidebarOpen(true)} title={pageTitles[currentPage]} user={props.user} />
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-slate-100 p-4 sm:p-6">
           {renderContent()}
         </main>

@@ -1,6 +1,6 @@
 
 import React, { useMemo } from 'react';
-import type { Bill, Vegetable } from '../types.ts';
+import type { Bill, Vegetable } from '../../types/types';
 import Button from './ui/Button.tsx';
 import { ArrowDownTrayIcon, CheckCircleIcon } from './ui/Icon.tsx';
 

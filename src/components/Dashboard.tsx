@@ -1,7 +1,7 @@
 import React from 'react';
 import Statistics from './Statistics.tsx';
 import RecentTransactions from './RecentTransactions.tsx';
-import type { Bill, Vegetable } from '../types.ts';
+import type { Bill, Vegetable } from '../../types/types';
 
 interface DashboardProps {
     bills: Bill[];

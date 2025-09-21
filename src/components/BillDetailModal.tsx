@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Bill, Vegetable } from '../types.ts';
+import type { Bill, Vegetable } from '../../types/types';
 import { XMarkIcon, EyeIcon, ArrowDownTrayIcon } from './ui/Icon.tsx';
 import ImagePreviewModal from './ui/ImagePreviewModal.tsx';
 import Button from './ui/Button.tsx';

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Bill } from '../types.ts';
+import type { Bill } from '../../types/types';
 import Button from './ui/Button.tsx';
 
 interface RecentTransactionsProps {

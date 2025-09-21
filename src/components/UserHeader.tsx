@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import type { User } from '../types.ts';
+import type { User } from '../../types/types';
 import { UserCircleIcon } from './ui/Icon.tsx';
 import MobileMenu from './MobileMenu.tsx';
 

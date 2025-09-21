@@ -1,4 +1,4 @@
-import type { Vegetable, User, Bill } from './types.ts';
+import type { Vegetable, User, Bill } from './types/types';
 
 export const VEGETABLES_DATA: Vegetable[] = [
   { id: 'veg1', name: 'Tomato', pricePerKg: 40, stockKg: 100, category: 'Vegetable', icon: '🍅' },

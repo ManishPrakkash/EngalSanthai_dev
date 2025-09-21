@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FormEvent } from 'react';
-import type { Vegetable } from '../types.ts';
+import type { Vegetable } from '../../types/types';
 import Button from './ui/Button.tsx';
 import { XMarkIcon } from './ui/Icon.tsx';
 

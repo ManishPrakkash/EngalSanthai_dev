@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Vegetable } from '../types.ts';
+import type { Vegetable } from '../../types/types';
 import Button from './ui/Button.tsx';
 import { PlusIcon, PencilSquareIcon, TrashIcon } from './ui/Icon.tsx';
 import VegetableFormModal from './VegetableFormModal.tsx';

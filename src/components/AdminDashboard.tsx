@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { User, Bill, Vegetable } from '../types.ts';
+import type { User, Bill, Vegetable } from '../../types/types';
 import Sidebar from './Sidebar.tsx';
 import AdminHeader from './AdminHeader.tsx';
 import Dashboard from './Dashboard.tsx';

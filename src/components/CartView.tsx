@@ -1,6 +1,6 @@
 
 import React from 'react';
-import type { BillItem } from '../types.ts';
+import type { BillItem } from '../../types/types';
 import Button from './ui/Button.tsx';
 import { ShoppingCartIcon, XMarkIcon, MinusIcon, PlusIcon } from './ui/Icon.tsx';
 

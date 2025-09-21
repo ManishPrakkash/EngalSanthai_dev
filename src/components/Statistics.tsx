@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import type { Bill, Vegetable } from '../types.ts';
+import type { Bill, Vegetable } from '../../types/types';
 import Card from './ui/Card.tsx';
 import { ChartBarIcon, ShoppingBagIcon, CubeIcon } from './ui/Icon.tsx';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuIcon, UserCircleIcon } from './ui/Icon.tsx';
-import type { User } from '../types.ts';
+import type { User } from '../../types/types';
 
 interface AdminHeaderProps {
   onMenuClick: () => void;

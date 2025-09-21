@@ -1,5 +1,5 @@
 import React from 'react';
-import type { User } from '../types.ts';
+import type { User } from'../../types/types';
 import { HomeIcon, CubeIcon, ShoppingCartIcon, LogoutIcon, XMarkIcon, CogIcon } from './ui/Icon.tsx';
 
 type AdminPage = 'dashboard' | 'inventory' | 'orders' | 'settings';

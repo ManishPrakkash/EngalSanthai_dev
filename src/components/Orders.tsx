@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import type { Bill, Vegetable } from '../types.ts';
+import type { Bill, Vegetable } from '../../types/types';
 import { MagnifyingGlassIcon, DocumentMagnifyingGlassIcon } from './ui/Icon.tsx';
 import BillDetailModal from './BillDetailModal.tsx';
 

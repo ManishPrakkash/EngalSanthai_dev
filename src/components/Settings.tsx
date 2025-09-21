@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { User } from '../types.ts';
+import type { User } from '../../types/types';
 import Button from './ui/Button.tsx';
 import { EyeIcon, UserCircleIcon, LockClosedIcon, CheckCircleIcon } from './ui/Icon.tsx';
 import Toast from './ui/Toast.tsx';

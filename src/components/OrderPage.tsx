@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
-import type { Vegetable, BillItem, Bill, User } from '../types.ts';
+import type { Vegetable, BillItem, Bill, User } from '../../types/types';
 import UserHeader from './UserHeader.tsx';
 import Button from './ui/Button.tsx';
 import { PlusIcon, MinusIcon, MagnifyingGlassIcon } from './ui/Icon.tsx';
